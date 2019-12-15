@@ -12,7 +12,7 @@ namespace calculator
 {
     public partial class Form1 : Form
     {
-        int resultat, a, b, elements = 0;
+        double resultat, a, b, elements = 0;
         char type_operation =' ';
 
         /// <summary>
@@ -21,6 +21,7 @@ namespace calculator
         /// <param name="sender"></param>
         public void chiffre(object sender)
         {
+            // squall
             if (elements == 2)
             {
                 textBox1.Text = "";
@@ -35,14 +36,14 @@ namespace calculator
         {
             if (elements == 0)
             {
-                int.TryParse(textBox1.Text, out a);
+                double.TryParse(textBox1.Text, out a);
                 Button btn = (Button)sender;
                 textBox1.Text = textBox1.Text + btn.Text;
                 type_operation = btn.Text[0];
                 elements++;
             }else if (elements == 2)
             {
-                int.TryParse(textBox1.Text, out a);
+                double.TryParse(textBox1.Text, out a);
                 Button btn = (Button)sender;
                 textBox1.Text = textBox1.Text + btn.Text;
                 type_operation = btn.Text[0];
@@ -57,7 +58,7 @@ namespace calculator
                 elements++;
                 try
                 {
-                    b = int.Parse(textBox1.Text.Split(type_operation)[1]);
+                    b = double.Parse(textBox1.Text.Split(type_operation)[1]);
                     switch (type_operation)
                     {
                         case '+':
@@ -82,7 +83,7 @@ namespace calculator
                     }
                 }catch(Exception e)
                 {
-                    textBox1.Text = "";
+                    textBox1.Text = "0";
                 }
                 
                 
