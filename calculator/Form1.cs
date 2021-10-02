@@ -168,6 +168,11 @@ namespace calculator
 
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
             chiffre(sender);

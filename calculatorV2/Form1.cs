@@ -38,6 +38,10 @@ namespace calculatorV2
 
         }
 
+        /// <summary>
+        /// code pour gérer les opérateurs selon le nombre d'élément
+        /// </summary>
+        /// <param name="sender"></param>
         public void operateur(object sender)
         {
             if (elements == 0)
@@ -122,8 +126,9 @@ namespace calculatorV2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            panel2.Hide();
-            panel4.Show();
+            // au démarrage on affiche la basique
+            pnlBasique.Show();
+            pnlStandard.Hide();
             //panel4.Hide();
             pnlInfo.Hide();
         }
@@ -244,9 +249,9 @@ namespace calculatorV2
         }
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-            panel4.Hide();
+            pnlStandard.Hide();
             pnlInfo.Hide();
-            panel2.Show();
+            pnlBasique.Show();
             flowLayoutPanel1.Hide();
         }
 
@@ -257,9 +262,9 @@ namespace calculatorV2
 
         private void bunifuFlatButton1_Click_2(object sender, EventArgs e)
         {
-            panel2.Hide();
+            pnlBasique.Hide();
             pnlInfo.Hide();
-            panel4.Show();
+            pnlStandard.Show();
             flowLayoutPanel1.Hide();
         }
 
@@ -494,8 +499,8 @@ namespace calculatorV2
 
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
         {
-            panel2.Hide();
-            panel4.Hide();
+            pnlBasique.Hide();
+            pnlStandard.Hide();
             pnlInfo.Show();
             flowLayoutPanel1.Hide();
         }
@@ -546,6 +551,11 @@ namespace calculatorV2
         private void button41_Click(object sender, EventArgs e)
         {
             // signe - 
+        }
+
+        private void pnlDrag_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void button3_Click(object sender, EventArgs e)
